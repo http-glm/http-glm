@@ -23,3 +23,27 @@ Content-Type: text/html; charset=utf-8
 * **application/json**
 * **application/x-ndjson** 或旧版 application/jsonlines 或更宽松的 application/stream+json
 * **application/xml**
+
+## 提示词
+将代码块内容添加到到提示词最开头（不包含代码块的标记），按需调整内容
+````
+按以下代码块中的格式输出，输出不包含代码块
+```
+HTTP/glm 200 OK
+Content-Type: text/plain
+
+(output)
+```
+输出由 4 部分组成
+```
+[start line]
+[headers]
+[empty line]
+[body]
+```
+- start line 是固定字符串 `HTTP/glm 200 OK`。
+- headers 是零个或多个键值对，格式为 Name: Value，以 CRLF 结尾。
+- empty line 是一个 CRLF（\r\n），用于分隔头部和正文，请务必不要丢失。
+- body 是可选的实体数据，格式由 headers 中的 Content-Type 决定(默认是 text/plain)。
+
+````
