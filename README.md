@@ -20,6 +20,7 @@ Content-Type: text/html; charset=utf-8
 
 ### ContentType
 * **text/html; charset=utf-8**
+* **text/markdown**
 * **application/json**
 * **application/x-ndjson** 或旧版 application/jsonlines 或更宽松的 application/stream+json
 * **application/xml**
